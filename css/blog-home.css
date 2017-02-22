@@ -1,0 +1,54 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+	background-color: #F5F5F5;
+}
+.title {
+	position: relative;
+	margin-left: 30%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.lorem {
+	margin-left: 150px;
+	margin-right: 150px;
+	margin-top: 70px;
+}
+
+.profil p{
+	text-align: center;
+}
+.profil h1{
+	text-align: center;
+}
+.profil h3{
+	text-align: center;
+}
+.profil button{
+	margin-left: 46%;
+}
+legend h1{
+	text-align: center;
+}
+.col-md-6 {
+	margin-left: 25%;
+}
+.modif {
+	margin-left: 46%;
+	margin-top: 20px;
+}
+.connect {
+	margin-top: 80px;
+}
+.edit h3{
+	text-align: center;
+}
+footer {
+    margin: 50px 0;
+}
+
+
