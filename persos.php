@@ -10,6 +10,7 @@ class Personnage
         public $defense = "";
         public $vie = "";
         public $arme = "";
+        public $degats = "";
 
     public function getClasse() {
         return $this->classe;
@@ -37,7 +38,7 @@ class Personnage
 class Game
 {
     
-    public function persos()
+    public function perso()
     {
 
         if (isset($_POST["persos"]) && isset($_POST["name"])) {
@@ -54,6 +55,7 @@ class Game
                 $perso->arme = "épée";
                 $perso->name = $name;
                 $perso->classe = "Guerrier";
+                $perso->degats = 0;
 
 
             } elseif ($persos == "magicien") {
@@ -65,6 +67,7 @@ class Game
                 $perso->arme = "Tome";
                 $perso->name = $name;
                 $perso->classe = "magicien";
+                $perso->degats = 0;
             } elseif ($persos == "paladin") {
                 $perso = new Personnage();
                 $perso->attaque = 40;
@@ -74,6 +77,7 @@ class Game
                 $perso->arme = "Tome et Épée";
                 $perso->name = $name;
                 $perso->classe = "paladin";
+                $perso->degats = 0;
             } else {
                 echo "Veuillez Renseigner un personnage existant";
             }
@@ -135,9 +139,8 @@ class Game
                 <div class="panel-heading">Créer le personnage</div>
 
                 <?php
-                $partie = new Game();
-                        ?> Votre personnage est un <?php $perso->printClasse(); ?><br>
-                            Votre personnage s'appelle <?php $perso->printName();
+                        ?> Votre personnage est un <?php $persos->printClasse(); ?><br>
+                            Votre personnage s'appelle <?php $persos->printName();
 
 
                 ?>
