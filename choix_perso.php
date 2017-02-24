@@ -22,7 +22,7 @@
                             <label class="control-label col-sm-2" for="name">Nom</label>
                             <br>
                             <div class="col-sm-10">
-                                <input type="text" name="name" id="persos" class="form-control" placeholder="Personnage"/>
+                                <input type="text" name="name" id="persos" class="form-control" placeholder="Nom"/>
                             </div>
 
                         </div>
