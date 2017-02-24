@@ -20,18 +20,54 @@ class Personnage
         echo "Vous êtes un " . $this->getClasse(); ?> <br> <?php
     }
 
-    public function getAttaque() {
-        return $this->attaque;
-    }
-    public function printAttaque() {
-        echo $this->getAttaque();
-    }
 
     public function getName() {
         return $this->name;
     }
     public function printName() {
-        echo "Vous vous appelez " . $this->getName();
+        echo "Vous vous appelez " . $this->getName();?> <br> <?php
+    }
+
+    public function getAttaque() {
+        return $this->attaque;
+    }
+    public function printAttaque() {
+        echo "Votre attaque est de " . $this->getAttaque() . " points";?> <br> <?php
+    }
+
+    public function getMagie() {
+        return $this->magie;
+    }
+    public function printMagie() {
+        echo "Vous possédez " . $this->getMagie() . " points de magie";?> <br> <?php
+    }
+
+    public function getDefense() {
+        return $this->defense;
+    }
+    public function printDefense() {
+        echo "Votre défense est de " . $this->getDefense() . " points";?> <br> <?php
+    }
+
+    public function getVie() {
+        return $this->vie;
+    }
+    public function printVie() {
+        echo "Votre avez " . $this->getVie() . " points de vie";?> <br> <?php
+    }
+
+    public function getArme() {
+        return $this->arme;
+    }
+    public function printArme() {
+        echo "Votre arme est une " . $this->getArme();?> <br> <?php
+    }
+
+    public function getDegats() {
+        return $this->degats;
+    }
+    public function printDegats() {
+        echo "Vous avez " . $this->getDegats() . " points de dégats";?> <br> <?php
     }
 }
 
@@ -102,6 +138,12 @@ class Personnage
                         $perso->degats = 0;
                         $perso->printClasse();
                         $perso->printName();
+                        $perso->printAttaque();
+                        $perso->printMagie();
+                        $perso->printDefense();
+                        $perso->printVie();
+                        $perso->printArme();
+                        $perso->printDegats();
                         $_SESSION['personnage'] = serialize(new Personnage());
 
                     } elseif ($persos == "magicien") {
@@ -117,6 +159,12 @@ class Personnage
                         $perso->degats = 0;
                         $perso->printClasse();
                         $perso->printName();
+                        $perso->printAttaque();
+                        $perso->printMagie();
+                        $perso->printDefense();
+                        $perso->printVie();
+                        $perso->printArme();
+                        $perso->printDegats();
                         $_SESSION['personnage'] = serialize(new Personnage());
 
                     } elseif ($persos == "paladin") {
@@ -132,6 +180,12 @@ class Personnage
                         $perso->degats = 0;
                         $perso->printClasse();
                         $perso->printName();
+                        $perso->printAttaque();
+                        $perso->printMagie();
+                        $perso->printDefense();
+                        $perso->printVie();
+                        $perso->printArme();
+                        $perso->printDegats();
                         $_SESSION['personnage'] = serialize(new Personnage());
 
                     } else {
