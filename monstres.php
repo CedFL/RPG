@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 class Monstre
 {
@@ -29,12 +31,12 @@ class Monstre
         return $this->_attaque;
     }
 
-
+   
     public function attaquer($cible)
     {
         $degats = $this->attaque() - $cible->defense();
         $cible->_vie -= $degats;
-        echo 'Le ' . $this->nom() . ' frappe ' . $cible->classe();
+        echo 'Le ' . $this->name() . ' frappe ' . $cible->classe();
     }
 
     public function mort()
@@ -43,12 +45,13 @@ class Monstre
             echo "Le monstre est mort";
         }
     }
+
 }
 
 class Gobelin extends Monstre
 {
     public $_id = 1;
-    public $_nom = 'Gobelin';
+    public $_name = 'Gobelin';
     public $_vie = 50;
     public	$_attaque = 20;
     public $_magie = 0;
@@ -58,7 +61,7 @@ class Gobelin extends Monstre
 class Dragon extends Monstre
 {
     public $_id = 2;
-    public $_nom = 'Dragon';
+    public $_name = 'Dragon';
     public $_vie = 200;
     public	$_attaque = 50;
     public $_magie = 0;
@@ -68,7 +71,7 @@ class Dragon extends Monstre
 class MagicienNoir extends Monstre
 {
     public $_id = 3;
-    public $_nom = 'Magicien Noir';
+    public $_name = 'Magicien Noir';
     public $_vie = 150;
     public	$_attaque = 50;
     public $_magie = 70;
