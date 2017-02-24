@@ -29,6 +29,7 @@ class Game
             return true;
         }
     }
+
     public function coffreApparition()
     {
         $_roll = rand(0, 1);
@@ -56,4 +57,6 @@ class Game
         return $_roll;
     }
 }
+$_SESSION['game'] = serialize(new Game());
+
 ?>

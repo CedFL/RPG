@@ -103,7 +103,7 @@ class Personnage
                         $perso->printVie();
                         $perso->printArme();
                         $perso->printDegats();
-                        $_SESSION['personnage'] = serialize(new Personnage());
+                        $_SESSION['perso'] = serialize(new Personnage());
 
                     } elseif ($persos == "magicien") {
                         $perso = new Personnage();

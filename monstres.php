@@ -31,12 +31,12 @@ class Monstre
         return $this->_attaque;
     }
 
-   
+
     public function attaquer($cible)
     {
         $degats = $this->attaque() - $cible->defense();
         $cible->_vie -= $degats;
-        echo 'Le ' . $this->name() . ' frappe ' . $cible->classe();
+        echo 'Le ' . $this->name() . ' frappe ' . $cible->name();
     }
 
     public function mort()
