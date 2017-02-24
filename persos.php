@@ -17,15 +17,14 @@ class Personnage
         return $this->classe;
     }
     public function printClasse() {
-        echo "Vous êtes un " . $this->getClasse(); ?> <br> <?php
+        ?> <p class="lead"> Vous êtes un  <?php echo $this->getClasse(); ?></p>  <br> <?php
     }
-
 
     public function getName() {
         return $this->name;
     }
     public function printName() {
-        echo "Vous vous appelez " . $this->getName();?> <br> <?php
+        ?> <p class="lead"> Vous vous appelez <?php echo $this->getName();?></p>  <br> <hr> <?php
     }
 
     public function getAttaque() {
