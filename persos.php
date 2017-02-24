@@ -139,11 +139,12 @@ class Game
                 <div class="panel-heading">Créer le personnage</div>
 
                 <?php
-                        ?> Votre personnage est un <?php $persos->printClasse(); ?><br>
-                            Votre personnage s'appelle <?php $persos->printName();
+                        ?> Votre personnage est un <?php $perso->printClasse(); ?><br>
+                            Votre personnage s'appelle <?php $perso->printName();?>
 
-
-                ?>
+                <button class="btn btn-primary" style="height:75px; width:200px; margin-left:50px; margin-top:100px;">
+                    <a style="color:white; font-size:22px;" href="salle1.php"> Lancer la partie </a>
+                </button>
 
             </div>
         </div>
