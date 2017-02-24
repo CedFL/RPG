@@ -3,20 +3,21 @@
     require ("db.php");
 class Personnage
 {
-        public $name = "";
-        public $classe = "";
-        public $attaque = "";
-        public $magie = "";
-        public $defense = "";
-        public $vie = "";
-        public $arme = "";
-        public $degats = "";
+        public $id;
+        public $name;
+        public $classe;
+        public $attaque;
+        public $magie;
+        public $defense;
+        public $vie;
+        public $arme;
+        public $degats;
 
     public function getClasse() {
         return $this->classe;
     }
     public function printClasse() {
-        echo $this->getClasse();
+        echo "Vous êtes un " . $this->getClasse(); ?> <br> <?php
     }
 
     public function getAttaque() {
@@ -30,64 +31,9 @@ class Personnage
         return $this->name;
     }
     public function printName() {
-        echo $this->getName();
+        echo "Vous vous appelez " . $this->getName();
     }
 }
-
-
-class Game
-{
-    
-    public function perso()
-    {
-
-        if (isset($_POST["persos"]) && isset($_POST["name"])) {
-
-            $persos = htmlspecialchars($_POST["persos"]);
-            $name = htmlspecialchars($_POST["name"]);
-
-            if ($persos == "guerrier") {
-                $perso = new Personnage();
-                $perso->attaque = 60;
-                $perso->magie = 0;
-                $perso->defense = 40;
-                $perso->vie = 100;
-                $perso->arme = "épée";
-                $perso->name = $name;
-                $perso->classe = "Guerrier";
-                $perso->degats = 0;
-
-
-            } elseif ($persos == "magicien") {
-                $perso = new Personnage();
-                $perso->attaque = 0;
-                $perso->magie = 60;
-                $perso->defense = 40;
-                $perso->vie = 100;
-                $perso->arme = "Tome";
-                $perso->name = $name;
-                $perso->classe = "magicien";
-                $perso->degats = 0;
-            } elseif ($persos == "paladin") {
-                $perso = new Personnage();
-                $perso->attaque = 40;
-                $perso->magie = 40;
-                $perso->defense = 20;
-                $perso->vie = 100;
-                $perso->arme = "Tome et Épée";
-                $perso->name = $name;
-                $perso->classe = "paladin";
-                $perso->degats = 0;
-            } else {
-                echo "Veuillez Renseigner un personnage existant";
-            }
-        } else {
-            echo "Veuillez Renseigner les champs";
-        }
-    }
-}
-
-
 
 ?>
 
@@ -138,11 +84,64 @@ class Game
             <div class="panel panel-default">
                 <div class="panel-heading">Créer le personnage</div>
 
-                <?php
-                        ?> Votre personnage est un <?php $perso->printClasse(); ?><br>
-                            Votre personnage s'appelle <?php $perso->printName();?>
+                <?php   if (isset($_POST["persos"]) && isset($_POST["name"])) {
 
-                <button class="btn btn-primary" style="height:75px; width:200px; margin-left:50px; margin-top:100px;">
+                    $persos = htmlspecialchars($_POST["persos"]);
+                    $name = htmlspecialchars($_POST["name"]);
+
+                    if ($persos == "guerrier") {
+                        $perso = new Personnage();
+                        $perso->id=1;
+                        $perso->attaque = 60;
+                        $perso->magie = 0;
+                        $perso->defense = 40;
+                        $perso->vie = 100;
+                        $perso->arme = "épée";
+                        $perso->name = $name;
+                        $perso->classe = "Guerrier";
+                        $perso->degats = 0;
+                        $perso->printClasse();
+                        $perso->printName();
+                        $_SESSION['personnage'] = serialize(new Personnage());
+
+                    } elseif ($persos == "magicien") {
+                        $perso = new Personnage();
+                        $perso->id=2;
+                        $perso->attaque = 0;
+                        $perso->magie = 60;
+                        $perso->defense = 40;
+                        $perso->vie = 100;
+                        $perso->arme = "Baguette";
+                        $perso->name = $name;
+                        $perso->classe = "magicien";
+                        $perso->degats = 0;
+                        $perso->printClasse();
+                        $perso->printName();
+                        $_SESSION['personnage'] = serialize(new Personnage());
+
+                    } elseif ($persos == "paladin") {
+                        $perso = new Personnage();
+                        $perso->id=3;
+                        $perso->attaque = 40;
+                        $perso->magie = 40;
+                        $perso->defense = 20;
+                        $perso->vie = 100;
+                        $perso->arme = "Baguette et Épée";
+                        $perso->name = $name;
+                        $perso->classe = "paladin";
+                        $perso->degats = 0;
+                        $perso->printClasse();
+                        $perso->printName();
+                        $_SESSION['personnage'] = serialize(new Personnage());
+
+                    } else {
+                        echo "Veuillez Renseigner un personnage existant";
+                    }
+                } else {
+                    echo "Veuillez Renseigner les champs";
+                }
+
+                ?><button class="btn btn-primary" style="height:75px; width:200px; margin-left:50px; margin-top:100px;">
                     <a style="color:white; font-size:22px;" href="salle1.php"> Lancer la partie </a>
                 </button>
 
