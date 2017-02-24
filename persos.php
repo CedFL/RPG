@@ -1,6 +1,6 @@
 <?php
+
     session_start();
-    require ("db.php");
 class Personnage
 {
         public $id;

@@ -59,7 +59,7 @@ class Dragon extends Monstre
 {
     public $_id = 2;
     public $_nom = 'Dragon';
-    public $_vie = 500;
+    public $_vie = 200;
     public	$_attaque = 50;
     public $_magie = 0;
 
@@ -69,9 +69,9 @@ class MagicienNoir extends Monstre
 {
     public $_id = 3;
     public $_nom = 'Magicien Noir';
-    public $_vie = 500;
+    public $_vie = 150;
     public	$_attaque = 50;
-    public $_magie = 0;
+    public $_magie = 70;
 
 }
 ?>
